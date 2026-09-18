@@ -4,6 +4,8 @@ import { InMemoryMetricRepository } from './modules/metrics/infra/in-memory-metr
 import { CollectMetricsUseCase } from './modules/metrics/use-cases/collect-metrics.use-case'
 import { GetMetricsUseCase } from './modules/metrics/use-cases/get-metrics.use-case'
 import { KillProcessUseCase } from './modules/metrics/use-cases/kill-process.use-case'
+import { metricsRoutes } from './routes/metrics.routes'
+import { processesRoutes } from './routes/processes.routes'
 import { buildServer } from './server'
 
 const PORT = Number(process.env.PORT) || 3001
@@ -23,11 +25,9 @@ async function main() {
   const getMetrics = new GetMetricsUseCase(repository)
   const killProcess = new KillProcessUseCase()
 
-  // Make dependencies available to routes
-  app.decorate('repository', repository)
-  app.decorate('collectMetrics', collectMetrics)
-  app.decorate('getMetrics', getMetrics)
-  app.decorate('killProcess', killProcess)
+  // Register routes
+  await app.register(metricsRoutes, { getMetrics, collectMetrics })
+  await app.register(processesRoutes, { getMetrics, killProcess })
 
   // Health check
   app.get(

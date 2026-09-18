@@ -66,7 +66,7 @@ Single file test: `npx vitest run apps/agent/src/path/to/file.spec.ts`
 ## Key Dependencies
 
 - Fastify 5 (not 4) — required by `@fastify/type-provider-zod@1.0.0`
-- Zod 3.x (v4 exists but not used here)
+- Zod 4.x (used by `@fastify/type-provider-zod@1.0.0`)
 - BiomeJS 2.5+ (config schema changed from v1)
 - `.npmrc` has `legacy-peer-deps=true` — peer dep conflicts are expected
 
