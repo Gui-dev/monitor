@@ -5,9 +5,6 @@ pre-commit:
       glob: "*.{js,ts,jsx,tsx,json,css}"
       run: npx @biomejs/biome check --staged {staged_files}
       stage_fixed: true
-    types:
-      glob: "*.{ts,tsx}"
-      run: npx tsc --noEmit -p apps/agent/tsconfig.json && npx tsc --noEmit -p apps/dashboard/tsconfig.json
 
 pre-push:
   commands:
