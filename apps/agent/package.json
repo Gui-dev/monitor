@@ -13,25 +13,26 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@pulseos/shared": "*",
-    "fastify": "^5.0.0",
-    "@fastify/websocket": "^11.0.0",
+    "@fastify/cors": "^10.0.0",
     "@fastify/swagger": "^9.5.1",
     "@fastify/swagger-ui": "^5.0.0",
-    "@fastify/cors": "^10.0.0",
     "@fastify/type-provider-zod": "^1.0.0",
-    "zod": "^4.2.0",
+    "@fastify/websocket": "^11.0.0",
+    "@pulseos/shared": "*",
     "drizzle-orm": "^0.30.0",
-    "ws": "^8.16.0"
+    "fastify": "^5.0.0",
+    "ws": "^8.16.0",
+    "zod": "^4.2.0"
   },
   "devDependencies": {
-    "@types/ws": "^8.5.10",
+    "@playwright/test": "^1.42.0",
+    "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^20.11.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.4.0",
-    "vitest": "^1.6.0",
+    "@types/ws": "^8.5.10",
     "@vitest/coverage-v8": "^1.6.0",
     "drizzle-kit": "^0.21.0",
-    "@playwright/test": "^1.42.0"
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
   }
 }

@@ -28,7 +28,7 @@
 ## Agent — API Layer
 
 - [x] **Task 12:** Fastify server setup + Swagger + error handler
-- [ ] **Task 13:** REST routes (metrics, processes, health)
+- [x] **Task 13:** REST routes (metrics, processes, health)
 - [ ] **Task 14:** WebSocket routes + broadcast
 
 ## Dashboard — Setup
