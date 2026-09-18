@@ -6,7 +6,7 @@ PulseOS.node — real-time Linux server monitoring dashboard. Fastify API agent 
 
 ## Architecture
 
-Monorepo with npm workspaces. Hexagonal architecture (ports & adapters) in the agent.
+Monorepo with pnpm workspaces. Hexagonal architecture (ports & adapters) in the agent.
 
 ```
 apps/
@@ -25,22 +25,22 @@ Agent module layout (`apps/agent/src/modules/metrics/`):
 
 ```bash
 # Dev
-npm run dev:agent          # Fastify on :3001 (tsx watch)
-npm run dev:dashboard      # Next.js on :3000
+pnpm dev:agent          # Fastify on :3001 (tsx watch)
+pnpm dev:dashboard      # Next.js on :3000
 
 # Verify
-npm run lint               # BiomeJS check
-npm run lint:fix           # BiomeJS auto-fix
-npm run typecheck          # tsc --noEmit for agent + dashboard
-npm run test               # Vitest run (all workspaces)
+pnpm lint               # BiomeJS check
+pnpm lint:fix           # BiomeJS auto-fix
+pnpm typecheck          # tsc --noEmit for agent + dashboard
+pnpm test               # Vitest run (all workspaces)
 
 # E2E
-npm run test:e2e:agent     # Playwright — apps/agent
-npm run test:e2e:dashboard # Playwright — apps/dashboard
+pnpm test:e2e:agent     # Playwright — apps/agent
+pnpm test:e2e:dashboard # Playwright — apps/dashboard
 ```
 
-Single package test: `npm run test --workspace=apps/agent`
-Single file test: `npx vitest run apps/agent/src/path/to/file.spec.ts`
+Single package test: `pnpm --filter @pulseos/agent test`
+Single file test: `pnpm vitest run apps/agent/src/path/to/file.spec.ts`
 
 ## Lefthook Hooks
 
@@ -68,10 +68,9 @@ Single file test: `npx vitest run apps/agent/src/path/to/file.spec.ts`
 - Fastify 5 (not 4) — required by `@fastify/type-provider-zod@1.0.0`
 - Zod 4.x (used by `@fastify/type-provider-zod@1.0.0`)
 - BiomeJS 2.5+ (config schema changed from v1)
-- `.npmrc` has `legacy-peer-deps=true` — peer dep conflicts are expected
 
 ## Gotchas
 
-- `npm install` requires `--legacy-peer-deps` (handled by `.npmrc`)
+- Workspace config uses `pnpm-workspace.yaml` (not `workspaces` in package.json)
 - Agent is ESM (`"type": "module"`) — use `import` not `require`
 - Agent collectors read `/proc/` and run `ps`/`df` — Linux only

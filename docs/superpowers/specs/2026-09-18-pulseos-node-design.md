@@ -24,7 +24,7 @@ A real-time Linux server monitoring dashboard with a Fastify API server, hexagon
 
 ## Architecture
 
-**Monorepo with npm workspaces + Hexagonal Architecture:**
+**Monorepo with pnpm workspaces + Hexagonal Architecture:**
 
 ```
 monitor/
