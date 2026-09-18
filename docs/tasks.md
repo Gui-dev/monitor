@@ -22,8 +22,8 @@
 
 ## Agent — Infrastructure
 
-- [ ] **Task 10:** Metric collectors (CPU, RAM, Disk, Network, Processes)
-- [ ] **Task 11:** Drizzle config + schema (optional persistence)
+- [x] **Task 10:** Metric collectors (CPU, RAM, Disk, Network, Processes)
+- [x] **Task 11:** Drizzle config + schema (optional persistence)
 
 ## Agent — API Layer
 
