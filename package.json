@@ -3,19 +3,19 @@
   "private": true,
   "workspaces": [
     "packages/shared",
-    "packages/agent",
-    "packages/dashboard",
-    "packages/e2e"
+    "packages/e2e",
+    "apps/agent",
+    "apps/dashboard"
   ],
   "scripts": {
-    "dev:agent": "npm run dev --workspace=packages/agent",
-    "dev:dashboard": "npm run dev --workspace=packages/dashboard",
+    "dev:agent": "npm run dev --workspace=apps/agent",
+    "dev:dashboard": "npm run dev --workspace=apps/dashboard",
     "build": "npm run build --workspaces",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
-    "typecheck": "tsc --noEmit -p packages/agent/tsconfig.json && tsc --noEmit -p packages/dashboard/tsconfig.json"
+    "typecheck": "tsc --noEmit -p apps/agent/tsconfig.json && tsc --noEmit -p apps/dashboard/tsconfig.json"
   }
 }

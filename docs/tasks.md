@@ -6,7 +6,7 @@
 
 - [x] **Task 1:** Monorepo scaffolding + BiomeJS
 - [x] **Task 2:** Shared types + Zod schemas
-- [ ] **Task 3:** Install all dependencies
+- [x] **Task 3:** Install all dependencies
 
 ## Agent — Domain Layer
 
