@@ -74,5 +74,4 @@ Single file test: `npx vitest run apps/agent/src/path/to/file.spec.ts`
 
 - `npm install` requires `--legacy-peer-deps` (handled by `.npmrc`)
 - Agent is ESM (`"type": "module"`) — use `import` not `require`
-- Dashboard tsconfig doesn't exist yet (Task 15) — pre-commit lint only for now
 - Agent collectors read `/proc/` and run `ps`/`df` — Linux only

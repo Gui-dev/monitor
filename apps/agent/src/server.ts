@@ -6,6 +6,7 @@ import {
   validatorCompiler,
   type ZodTypeProvider,
 } from '@fastify/type-provider-zod'
+import websocket from '@fastify/websocket'
 import Fastify from 'fastify'
 import {
   DomainError,
@@ -34,6 +35,9 @@ export function buildServer() {
 
   // CORS
   app.register(cors, { origin: true })
+
+  // WebSocket
+  app.register(websocket)
 
   // Swagger
   app.register(swagger, {

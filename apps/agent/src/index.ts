@@ -6,6 +6,7 @@ import { GetMetricsUseCase } from './modules/metrics/use-cases/get-metrics.use-c
 import { KillProcessUseCase } from './modules/metrics/use-cases/kill-process.use-case'
 import { metricsRoutes } from './routes/metrics.routes'
 import { processesRoutes } from './routes/processes.routes'
+import { wsRoutes } from './routes/ws.routes'
 import { buildServer } from './server'
 
 const PORT = Number(process.env.PORT) || 3001
@@ -28,6 +29,7 @@ async function main() {
   // Register routes
   await app.register(metricsRoutes, { getMetrics, collectMetrics })
   await app.register(processesRoutes, { getMetrics, killProcess })
+  await app.register(wsRoutes, { collectMetrics, getMetrics, killProcess })
 
   // Health check
   app.get(

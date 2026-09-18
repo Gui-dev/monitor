@@ -33,7 +33,7 @@
 
 ## Dashboard — Setup
 
-- [ ] **Task 15:** Next.js + Tailwind + shadcn/ui setup
+- [x] **Task 15:** Next.js + Tailwind + shadcn/ui setup
 - [ ] **Task 16:** Global styles + theme (cyberpunk colors)
 - [ ] **Task 17:** Vitest workspace config
 
