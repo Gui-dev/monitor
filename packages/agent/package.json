@@ -10,5 +10,26 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@pulseos/shared": "*",
+    "fastify": "^5.0.0",
+    "@fastify/websocket": "^11.0.0",
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.0.0",
+    "@fastify/cors": "^10.0.0",
+    "@fastify/type-provider-zod": "^1.0.0",
+    "zod": "^3.22.0",
+    "drizzle-orm": "^0.30.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10",
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "drizzle-kit": "^0.21.0"
   }
 }
