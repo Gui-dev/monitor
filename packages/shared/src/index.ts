@@ -1,21 +1,20 @@
+export {
+  CpuMetricsSchema,
+  DiskMetricsSchema,
+  KillProcessSchema,
+  MetricPayloadSchema,
+  MetricsQuerySchema,
+  NetworkMetricsSchema,
+  ProcessInfoSchema,
+  RamMetricsSchema,
+} from './schemas'
 export type {
   CpuMetrics,
-  RamMetrics,
   DiskMetrics,
+  MetricPayload,
   NetworkMetrics,
   ProcessInfo,
-  MetricPayload,
-  WSResponse,
+  RamMetrics,
   WSCommand,
+  WSResponse,
 } from './types'
-
-export {
-  MetricPayloadSchema,
-  KillProcessSchema,
-  MetricsQuerySchema,
-  ProcessInfoSchema,
-  CpuMetricsSchema,
-  RamMetricsSchema,
-  DiskMetricsSchema,
-  NetworkMetricsSchema,
-} from './schemas'

@@ -17,6 +17,15 @@
       }
     }
   },
+  "css": {
+    "parser": {
+      "cssModules": false,
+      "tailwindDirectives": true
+    },
+    "linter": {
+      "enabled": false
+    }
+  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
