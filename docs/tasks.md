@@ -10,7 +10,7 @@
 
 ## Agent — Domain Layer
 
-- [ ] **Task 4:** Agent package setup
+- [x] **Task 4:** Agent package setup
 - [ ] **Task 5:** Domain layer (entities, repository contract, DomainError)
 - [ ] **Task 6:** In-memory repository + unit tests
 
@@ -64,5 +64,5 @@
 
 ## Final
 
-- [ ] **Task 30:** Build, lint, typecheck verification
-- [ ] **Task 31:** Integration smoke test
+- [ ] **Task 31:** Build, lint, typecheck verification
+- [ ] **Task 32:** Integration smoke test
