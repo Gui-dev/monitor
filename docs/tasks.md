@@ -12,7 +12,7 @@
 
 - [x] **Task 4:** Agent package setup
 - [x] **Task 5:** Domain layer (entities, repository contract, DomainError)
-- [ ] **Task 6:** In-memory repository + unit tests
+- [x] **Task 6:** In-memory repository + unit tests
 
 ## Agent — Use Cases
 
