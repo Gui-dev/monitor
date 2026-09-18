@@ -4,7 +4,7 @@
 
 ## Setup
 
-- [ ] **Task 1:** Monorepo scaffolding + BiomeJS
+- [x] **Task 1:** Monorepo scaffolding + BiomeJS
 - [ ] **Task 2:** Shared types + Zod schemas
 - [ ] **Task 3:** Install all dependencies
 
