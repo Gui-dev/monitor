@@ -52,11 +52,15 @@
 - [ ] **Task 25:** useWebSocket hook + tests
 - [ ] **Task 26:** Main page + layout assembly
 
-## E2E Tests
+## Agent — E2E Tests
 
-- [ ] **Task 27:** Playwright setup + config
-- [ ] **Task 28:** Dashboard E2E tests
-- [ ] **Task 29:** Metrics API E2E tests
+- [ ] **Task 27:** Playwright setup + config (apps/agent)
+- [ ] **Task 28:** Metrics API E2E tests
+
+## Dashboard — E2E Tests
+
+- [ ] **Task 29:** Playwright setup + config (apps/dashboard)
+- [ ] **Task 30:** Dashboard E2E tests
 
 ## Final
 

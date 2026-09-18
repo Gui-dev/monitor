@@ -7,6 +7,7 @@
     "apps/dashboard"
   ],
   "scripts": {
+    "prepare": "lefthook install",
     "dev:agent": "npm run dev --workspace=apps/agent",
     "dev:dashboard": "npm run dev --workspace=apps/dashboard",
     "build": "npm run build --workspaces",
@@ -18,5 +19,8 @@
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
     "typecheck": "tsc --noEmit -p apps/agent/tsconfig.json && tsc --noEmit -p apps/dashboard/tsconfig.json"
+  },
+  "devDependencies": {
+    "lefthook": "^2.1.14"
   }
 }
