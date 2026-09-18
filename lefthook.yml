@@ -9,6 +9,6 @@ pre-commit:
 pre-push:
   commands:
     typecheck:
-      run: npm run typecheck
+      run: pnpm run typecheck
     test:
-      run: npm run test
+      run: pnpm run test
