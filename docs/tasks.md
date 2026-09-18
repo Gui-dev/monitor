@@ -18,7 +18,7 @@
 
 - [x] **Task 7:** CollectMetricsUseCase + tests
 - [x] **Task 8:** GetMetricsUseCase + tests
-- [ ] **Task 9:** KillProcessUseCase + tests
+- [x] **Task 9:** KillProcessUseCase + tests
 
 ## Agent — Infrastructure
 
