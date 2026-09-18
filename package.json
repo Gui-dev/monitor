@@ -1,0 +1,21 @@
+{
+  "name": "pulseos-node",
+  "private": true,
+  "workspaces": [
+    "packages/shared",
+    "packages/agent",
+    "packages/dashboard",
+    "packages/e2e"
+  ],
+  "scripts": {
+    "dev:agent": "npm run dev --workspace=packages/agent",
+    "dev:dashboard": "npm run dev --workspace=packages/dashboard",
+    "build": "npm run build --workspaces",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit -p packages/agent/tsconfig.json && tsc --noEmit -p packages/dashboard/tsconfig.json"
+  }
+}

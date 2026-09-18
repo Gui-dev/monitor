@@ -1,0 +1,64 @@
+# PulseOS.node — Tasks
+
+> Checklist de implementação. Marque ✅ cada task ao completar.
+
+## Setup
+
+- [ ] **Task 1:** Monorepo scaffolding + BiomeJS
+- [ ] **Task 2:** Shared types + Zod schemas
+- [ ] **Task 3:** Install all dependencies
+
+## Agent — Domain Layer
+
+- [ ] **Task 4:** Agent package setup
+- [ ] **Task 5:** Domain layer (entities, repository contract, DomainError)
+- [ ] **Task 6:** In-memory repository + unit tests
+
+## Agent — Use Cases
+
+- [ ] **Task 7:** CollectMetricsUseCase + tests
+- [ ] **Task 8:** GetMetricsUseCase + tests
+- [ ] **Task 9:** KillProcessUseCase + tests
+
+## Agent — Infrastructure
+
+- [ ] **Task 10:** Metric collectors (CPU, RAM, Disk, Network, Processes)
+- [ ] **Task 11:** Drizzle config + schema (optional persistence)
+
+## Agent — API Layer
+
+- [ ] **Task 12:** Fastify server setup + Swagger + error handler
+- [ ] **Task 13:** REST routes (metrics, processes, health)
+- [ ] **Task 14:** WebSocket routes + broadcast
+
+## Dashboard — Setup
+
+- [ ] **Task 15:** Next.js + Tailwind + shadcn/ui setup
+- [ ] **Task 16:** Global styles + theme (cyberpunk colors)
+- [ ] **Task 17:** Vitest workspace config
+
+## Dashboard — Components
+
+- [ ] **Task 18:** StatusBadge + tests
+- [ ] **Task 19:** Header + tests
+- [ ] **Task 20:** ServerInfoCard + MetricCard + GradientGauge
+- [ ] **Task 21:** RealTimeChart (Recharts)
+- [ ] **Task 22:** CoreCluster
+- [ ] **Task 23:** ProcessTable + tests
+- [ ] **Task 24:** WSEventStream
+
+## Dashboard — Integration
+
+- [ ] **Task 25:** useWebSocket hook + tests
+- [ ] **Task 26:** Main page + layout assembly
+
+## E2E Tests
+
+- [ ] **Task 27:** Playwright setup + config
+- [ ] **Task 28:** Dashboard E2E tests
+- [ ] **Task 29:** Metrics API E2E tests
+
+## Final
+
+- [ ] **Task 30:** Build, lint, typecheck verification
+- [ ] **Task 31:** Integration smoke test
