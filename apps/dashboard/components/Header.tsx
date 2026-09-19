@@ -21,7 +21,6 @@ export function Header({ wsConnected }: HeaderProps) {
             </p>
           </div>
         </div>
-        <StatusBadge label="V2.4.0" color="accent" />
       </div>
       <StatusBadge
         label={wsConnected ? 'WS Stream: Active' : 'WS Stream: Disconnected'}
