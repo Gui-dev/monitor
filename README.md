@@ -139,4 +139,4 @@ hooks/
 
 ## License
 
-Private — not for distribution.
+[MIT](LICENSE)
