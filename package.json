@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "prepare": "lefthook install",
+    "dev": "pnpm --filter @pulseos/agent dev & pnpm --filter @pulseos/dashboard dev",
     "dev:agent": "pnpm --filter @pulseos/agent dev",
     "dev:dashboard": "pnpm --filter @pulseos/dashboard dev",
     "build": "pnpm -r build",
