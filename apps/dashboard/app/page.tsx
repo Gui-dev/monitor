@@ -1,5 +1,6 @@
 'use client'
-import { useMemo } from 'react'
+import type { MetricPayload } from '@pulseos/shared'
+import { useEffect, useRef, useState } from 'react'
 import { CoreCluster } from '@/components/CoreCluster'
 import { Header } from '@/components/Header'
 import { MetricCard } from '@/components/MetricCard'
@@ -10,14 +11,54 @@ import { WSEventStream } from '@/components/WSEventStream'
 import { useWebSocket } from '@/hooks/useWebSocket'
 
 const WS_URL = 'ws://localhost:3001/ws'
+const API_URL = 'http://localhost:3001'
+const MAX_CHART_POINTS = 200
+
+interface ChartPoint {
+  time: string
+  cpu: number
+  ram: number
+}
 
 export default function Dashboard() {
-  const { data, connected, wsRate, events, send } = useWebSocket(WS_URL)
-
-  const chartData = useMemo(
-    () => Array.from({ length: 200 }, (_, i) => ({ time: `${200 - i}`, cpu: 0, ram: 0 })),
-    [],
+  const { data: wsData, connected, wsRate, events, send } = useWebSocket(WS_URL)
+  const [data, setData] = useState<MetricPayload | null>(null)
+  const [chartData, setChartData] = useState<ChartPoint[]>(() =>
+    Array.from({ length: MAX_CHART_POINTS }, (_, i) => ({
+      time: `${MAX_CHART_POINTS - i}`,
+      cpu: 0,
+      ram: 0,
+    })),
   )
+  const pointIndex = useRef(MAX_CHART_POINTS)
+
+  // Fetch initial data via REST
+  useEffect(() => {
+    fetch(`${API_URL}/api/metrics/current`)
+      .then((res) => res.json())
+      .then((payload) => {
+        if (payload.type === 'metrics') {
+          setData(payload as MetricPayload)
+        }
+      })
+      .catch(() => {})
+  }, [])
+
+  // Update data from WebSocket
+  useEffect(() => {
+    if (wsData) {
+      setData(wsData)
+      pointIndex.current++
+      setChartData((prev) => [
+        ...prev.slice(1),
+        {
+          time: `${pointIndex.current}`,
+          cpu: wsData.cpu.overall,
+          ram: wsData.ram.percent,
+        },
+      ])
+    }
+  }, [wsData])
 
   return (
     <div className="min-h-screen bg-background">

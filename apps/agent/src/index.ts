@@ -6,7 +6,7 @@ import { GetMetricsUseCase } from './modules/metrics/use-cases/get-metrics.use-c
 import { KillProcessUseCase } from './modules/metrics/use-cases/kill-process.use-case'
 import { metricsRoutes } from './routes/metrics.routes'
 import { processesRoutes } from './routes/processes.routes'
-import { wsRoutes } from './routes/ws.routes'
+import { broadcastMetrics, wsRoutes } from './routes/ws.routes'
 import { buildServer } from './server'
 
 const PORT = Number(process.env.PORT) || 3001
@@ -30,6 +30,17 @@ async function main() {
   await app.register(metricsRoutes, { getMetrics, collectMetrics })
   await app.register(processesRoutes, { getMetrics, killProcess })
   await app.register(wsRoutes, { collectMetrics, getMetrics, killProcess })
+
+  // Auto-collect and broadcast metrics every 2 seconds
+  const COLLECT_INTERVAL = 2000
+  setInterval(async () => {
+    try {
+      const payload = await collectMetrics.execute()
+      broadcastMetrics(payload)
+    } catch {
+      // ignore collection errors
+    }
+  }, COLLECT_INTERVAL)
 
   // Health check
   app.get(
