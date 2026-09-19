@@ -23,20 +23,6 @@ export function Header({ wsConnected }: HeaderProps) {
         </div>
         <StatusBadge label="V2.4.0" color="accent" />
       </div>
-      <nav className="flex items-center gap-2">
-        <button
-          type="button"
-          className="px-4 py-2 rounded-lg bg-accent/15 text-accent text-sm font-medium border border-accent/30 hover:bg-accent/25 transition-colors"
-        >
-          Dashboard
-        </button>
-        <button
-          type="button"
-          className="px-4 py-2 rounded-lg text-text-muted text-sm font-medium hover:bg-card transition-colors"
-        >
-          UI Component Library
-        </button>
-      </nav>
       <StatusBadge
         label={wsConnected ? 'WS Stream: Active' : 'WS Stream: Disconnected'}
         color={wsConnected ? 'success' : 'danger'}

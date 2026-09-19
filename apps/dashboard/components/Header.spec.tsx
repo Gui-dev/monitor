@@ -19,10 +19,4 @@ describe('<Header />', () => {
     render(<Header wsConnected={false} />)
     expect(screen.getByText('WS Stream: Disconnected')).toBeInTheDocument()
   })
-
-  it('should render navigation buttons', () => {
-    render(<Header wsConnected={false} />)
-    expect(screen.getByRole('button', { name: /Dashboard/i })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /UI Component Library/i })).toBeInTheDocument()
-  })
 })
