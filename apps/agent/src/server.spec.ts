@@ -55,21 +55,21 @@ describe('Server', () => {
   })
 
   describe('GET /docs', () => {
-    it('should serve Swagger UI', async () => {
+    it('should serve Scalar API reference', async () => {
       const response = await app.inject({
         method: 'GET',
         url: '/docs',
       })
 
-      expect(response.statusCode).toBe(200)
+      expect([200, 301]).toContain(response.statusCode)
     })
   })
 
-  describe('GET /docs/json', () => {
+  describe('GET /docs/openapi.json', () => {
     it('should return OpenAPI JSON', async () => {
       const response = await app.inject({
         method: 'GET',
-        url: '/docs/json',
+        url: '/docs/openapi.json',
       })
 
       expect(response.statusCode).toBe(200)

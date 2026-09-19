@@ -1,12 +1,12 @@
 import cors from '@fastify/cors'
 import swagger from '@fastify/swagger'
-import swaggerUi from '@fastify/swagger-ui'
 import {
   serializerCompiler,
   validatorCompiler,
   type ZodTypeProvider,
 } from '@fastify/type-provider-zod'
 import websocket from '@fastify/websocket'
+import scalar from '@scalar/fastify-api-reference'
 import Fastify from 'fastify'
 import {
   DomainError,
@@ -51,8 +51,11 @@ export function buildServer() {
     },
   })
 
-  app.register(swaggerUi, {
+  app.register(scalar, {
     routePrefix: '/docs',
+    configuration: {
+      title: 'PulseOS.node Agent API',
+    },
   })
 
   // Error handler
