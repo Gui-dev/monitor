@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { GradientGauge } from './GradientGauge'
+import { GradientGauge } from './gradient-gauge'
 
 describe('<GradientGauge />', () => {
   it('should render with default height', () => {

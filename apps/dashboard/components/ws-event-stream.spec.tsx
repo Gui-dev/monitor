@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
-import { WSEventStream } from './WSEventStream'
+import { WSEventStream } from './ws-event-stream'
 
 const mockEvents = [
   { timestamp: '12:00:01', direction: 'rx' as const, data: '{"type":"metrics"}' },

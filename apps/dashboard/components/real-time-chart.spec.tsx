@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { RealTimeChart } from './RealTimeChart'
+import { RealTimeChart } from './real-time-chart'
 
 describe('<RealTimeChart />', () => {
   const sampleData = [

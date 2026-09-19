@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { MetricCard } from './MetricCard'
+import { MetricCard } from './metric-card'
 
 describe('<MetricCard />', () => {
   it('should render title and value', () => {

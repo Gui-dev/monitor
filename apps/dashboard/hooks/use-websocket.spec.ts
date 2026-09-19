@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { useWebSocket } from './useWebSocket'
+import { useWebSocket } from './use-websocket'
 
 const mockWs = {
   send: vi.fn(),

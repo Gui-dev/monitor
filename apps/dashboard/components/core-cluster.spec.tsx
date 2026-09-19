@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { CoreCluster } from './CoreCluster'
+import { CoreCluster } from './core-cluster'
 
 describe('<CoreCluster />', () => {
   it('should render the title', () => {

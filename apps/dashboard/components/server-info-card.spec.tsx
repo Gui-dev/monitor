@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { ServerInfoCard } from './ServerInfoCard'
+import { ServerInfoCard } from './server-info-card'
 
 describe('<ServerInfoCard />', () => {
   it('should render hostname from data', () => {

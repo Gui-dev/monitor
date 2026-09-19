@@ -2,7 +2,7 @@ import type { ProcessInfo } from '@pulseos/shared'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
-import { ProcessTable } from './ProcessTable'
+import { ProcessTable } from './process-table'
 
 const mockProcesses: ProcessInfo[] = [
   { pid: 1420, name: 'node /agent/server.js', user: 'root', cpu: 18.4, mem: 4.2 },

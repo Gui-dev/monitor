@@ -125,16 +125,16 @@ app/
 ├── page.tsx             # Main dashboard page
 └── layout.tsx           # Root layout
 components/
-├── Header.tsx           # Top bar with WS status
-├── ServerInfoCard.tsx   # Hostname, uptime, load average
-├── MetricCard.tsx       # CPU, RAM, disk, network cards
-├── GradientGauge.tsx    # Progress bar component
-├── RealTimeChart.tsx    # Live CPU/RAM chart (Recharts)
-├── CoreCluster.tsx      # Core temperature grid
-├── ProcessTable.tsx     # Process list with kill action
-└── WSEventStream.tsx    # WebSocket event log
+├── header.tsx           # Top bar with WS status
+├── server-info-card.tsx # Hostname, uptime, load average
+├── metric-card.tsx      # CPU, RAM, disk, network cards
+├── gradient-gauge.tsx   # Progress bar component
+├── real-time-chart.tsx  # Live CPU/RAM chart (Recharts)
+├── core-cluster.tsx     # Core temperature grid
+├── process-table.tsx    # Process list with kill action
+└── ws-event-stream.tsx  # WebSocket event log
 hooks/
-└── useWebSocket.ts      # Auto-reconnect WebSocket hook
+└── use-websocket.ts     # Auto-reconnect WebSocket hook
 ```
 
 ## License

@@ -1,4 +1,4 @@
-import { GradientGauge } from './GradientGauge'
+import { GradientGauge } from './gradient-gauge'
 
 interface CoreClusterProps {
   cores: number[]

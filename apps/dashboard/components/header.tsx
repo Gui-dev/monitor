@@ -1,4 +1,4 @@
-import { StatusBadge } from './StatusBadge'
+import { StatusBadge } from './status-badge'
 
 interface HeaderProps {
   wsConnected: boolean
