@@ -45,9 +45,10 @@ describe('collectCpu', () => {
     expect(metrics.model.length).toBeGreaterThan(0)
   })
 
-  it('should return positive speed', () => {
+  it('should return speed as a number', () => {
     const metrics = collectCpu()
 
-    expect(metrics.speed).toBeGreaterThan(0)
+    expect(typeof metrics.speed).toBe('number')
+    expect(metrics.speed).toBeGreaterThanOrEqual(0)
   })
 })

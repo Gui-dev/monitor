@@ -52,7 +52,8 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install --with-deps chromium
+      - name: Install Playwright browsers
+        run: pnpm --filter @pulseos/agent exec playwright install --with-deps chromium
       - name: Start agent
         run: pnpm dev:agent &
       - name: Start dashboard
