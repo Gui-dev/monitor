@@ -22,8 +22,10 @@ test('GET /api/metrics/history returns array', async ({ request }) => {
   expect(Array.isArray(body)).toBeTruthy()
 })
 
-test('POST /api/processes/:pid/kill returns result', async ({ request }) => {
+test('POST /api/processes/:pid/kill returns 404 for non-existent PID', async ({ request }) => {
   const response = await request.post('http://localhost:3001/api/processes/99999999/kill')
+  expect(response.status()).toBe(404)
   const body = await response.json()
-  expect(body.success).toBe(false)
+  expect(body.error).toBeDefined()
+  expect(body.code).toBe('PROCESS_NOT_FOUND')
 })
